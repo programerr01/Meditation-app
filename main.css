@@ -1,0 +1,166 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    list-style: none;
+    appearance: none;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    margin:1% ;
+    box-shadow: 0px 4px 0px 0px red;
+}
+input[type="number"]{
+    margin:1% 0px;
+    height: 7vh;
+    font-size: 15px;
+    border:none;
+    width: 55vw;
+    border-bottom: 1px solid rgb(93, 106, 119);
+
+}
+input[type="number"]:focus{
+    appearance: none;
+    outline: none;
+    box-shadow: 3px 4px 3px 2px #bcdfdfab;
+
+}
+input[type="submit"]{
+    outline: none;
+    margin:2px;
+    border: none;
+    width: 10vw;
+    background-color:#18181825 ;
+    border-radius: 10%;
+    color:#e693f1;
+    height: 5vh;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: sans-serif;
+    /* border: 1px solid #e693f1; */
+    box-shadow: 0 4px 4px 0 rgba(219, 179, 231, 0.2), 0 6px 5px 0 rgba(219, 146, 146, 0.19);
+  
+}
+
+
+body{
+    text-align: center;
+    background: linear-gradient(60deg ,#f5d3b33b 40% , #b4c5bf3d 75%);
+}
+.timer{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: red; */
+
+}
+/* sets the container height and width */
+.base-timer{
+    
+    margin-top:-10vh;
+    position: absolute;
+    /* height: 30vh; */
+    width:30vw;
+}
+/* remove svg styling that would hide the time label */
+.base-timer__circle{
+    fill:none;
+    stroke:none;
+    
+}
+/* THe SVG path that displays the timer's progress */
+.base-timer__path-elapsed{
+    stroke-width: 7px;
+    stroke:grey;
+}
+
+/* THe label of the remaining time left */
+.base-timer__label{
+    position: absolute;
+
+    /* Size should match the parent container */
+    width:30vw;
+    height:60vh;
+
+    /* Keep the label aligned to the top */
+    top:0;
+    /* Create a flexible box that centers content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Sort of an arbitray number; adjust to your liking */
+    font-size: 60px;
+
+}
+.base-timer__path-remaining{
+    /* just as thick as the original ring */
+    stroke-width:7px;
+
+    /* Rounds the line endings to create seamless circle */
+    stroke-linecap: round;
+    
+    /* Makes sure the animation starts at the top of the circle */
+    transform: rotate(90deg);
+    transform-origin: center;
+
+    /* one second aligns with the speed of the countdown timer */
+    transition:1s linear all;
+
+    /* Allow the ring to change color when the color value updates */
+    stroke: blue;
+
+}
+.cont{
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    width:20vw;
+    height: 20vh;
+}
+#sea-sound{
+    position: fixed;
+    top:25vh;
+    left:80vw;
+    float:right;
+    font-size:25px;
+    color:#43a71c;
+    opacity: 0.6;
+    /* border-radius: 30%; */
+    background:url('public/sea.jpg');
+    background-size: 120%;
+    background-repeat: no-repeat;
+    
+}
+#bird-sound{
+    position: fixed;
+    top:52vh;
+    left:80vw;
+    float:right;
+    font-size:25px;
+    color:white;
+    opacity: 0.6;
+    /* border-radius: 30%; */
+    background:url('public/bird.jpg');
+    background-size: cover;
+    background-repeat: cover;
+    
+}
+
+.base-timer__svg{
+    /* Flips the svg and makes animation to move left-to-right */
+    transform: scaleX(-1);
+}
+@media (max-width: 700px){
+    .base-timer{
+        /* height:50vh; */
+        width:50vw;
+    }
+    .base-timer__label{
+        /* background-color: rgba(95, 81, 81, 0.144); */
+        /* height: 50vh; */
+        height:45vh;
+        width:50vw;
+    }
+}

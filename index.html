@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Application</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1 >Meditation Application</h1>
+    <div class="selectTime">
+    <form onsubmit="return handleSubmit()">
+        <input id='input_val' type="number" maxlength="2" placeholder="Enter the time(in minutes) you want to meditate" >
+        <input type="submit" value="Start">
+    </form>
+    </div>
+    <div class="timer">
+        <div class="base-timer">
+            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <g class="base-timer__circle">
+                <circle class="base-timer__path-elapsed " cx="50" cy="50" r="45" />
+                <path 
+                    id="base-timer-path-remaining"
+                    stroke-dasharray="283"
+                    class="base-timer__path-remaining green"
+                    d="
+                    M 50,50
+                    m -45, 0
+                    a 45,45 0 1,0 90,0
+                    a 45 ,45 0 1,0 -90,0 
+                    "></path>
+              </g>
+            </svg>
+            <span id="base-time-label" class="base-timer__label">
+              <!-- Remaining time label -->
+            </span>
+          </div>
+         
+    </div>
+    <div class="cont" onclick="sound_play('sea')" id="sea-sound">
+        Sea
+    </div>
+    <div  class="cont" onclick="sound_play('bird')" id="bird-sound">
+        bird
+    </div>
+<script defer src="index.js"></script>
+</body>
+</html>
